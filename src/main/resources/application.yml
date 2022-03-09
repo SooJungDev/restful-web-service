@@ -1,0 +1,34 @@
+server:
+  port: 8088
+
+logging:
+  level:
+    org.springframework: DEBUG
+spring:
+  messages:
+    basename: messages
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    open-in-view: true
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
